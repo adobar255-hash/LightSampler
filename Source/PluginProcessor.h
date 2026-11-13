@@ -55,7 +55,7 @@ private:
 
     juce::AudioFormatManager formatManager;
     juce::ADSR::Parameters adsrParams;
-    SamplerSynth synth;
+    LsSynth synth;
     std::map<juce::String, Audio> cache;
     juce::StringArray loadedPaths;
 

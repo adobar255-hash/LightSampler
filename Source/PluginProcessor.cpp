@@ -8,7 +8,7 @@ SamplerAudioProcessor::SamplerAudioProcessor()
 {
     formatManager.registerBasicFormats();
     for (int i = 0; i < kNumVoices; ++i)
-        synth.addVoice (new SamplerVoice (adsrParams));
+        synth.addVoice (new LsVoice (adsrParams));
 }
 
 juce::AudioProcessorValueTreeState::ParameterLayout SamplerAudioProcessor::createLayout()

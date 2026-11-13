@@ -23,10 +23,10 @@ struct RegionSound : public juce::SynthesiserSound
 };
 
 //==============================================================================
-class SamplerVoice : public juce::SynthesiserVoice
+class LsVoice : public juce::SynthesiserVoice
 {
 public:
-    explicit SamplerVoice (const juce::ADSR::Parameters& p) : params (p) {}
+    explicit LsVoice (const juce::ADSR::Parameters& p) : params (p) {}
 
     bool canPlaySound (juce::SynthesiserSound* s) override
     {
@@ -131,7 +131,7 @@ private:
 
 //==============================================================================
 // Synth na gumagalang sa velocity ranges (para sa velocity layers)
-class SamplerSynth : public juce::Synthesiser
+class LsSynth : public juce::Synthesiser
 {
 public:
     void noteOn (int channel, int note, float velocity) override
