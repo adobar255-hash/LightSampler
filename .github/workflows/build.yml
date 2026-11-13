@@ -1,0 +1,23 @@
+name: Build VST3
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S . -B out -G "Visual Studio 17 2022" -A x64
+
+      - name: Build
+        run: cmake --build out --config Release --target LightSampler_VST3
+
+      - name: Upload VST3
+        uses: actions/upload-artifact@v4
+        with:
+          name: LightSampler-VST3
+          path: out/LightSampler_artefacts/Release/VST3
